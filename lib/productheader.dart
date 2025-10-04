@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 
 // ignore: must_be_immutable
-class ProductTitle extends StatelessWidget {
-  ProductTitle({
+class ProductHeader extends StatelessWidget {
+  ProductHeader({
     super.key,
     required this.name,
     required this.category,
     required this.rating,
-    required this.reviewNumber,
+    required this.reviews,
   });
 
   String name;
   String category;
   double rating;
-  int reviewNumber;
+  int reviews;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class ProductTitle extends StatelessWidget {
                 ),
               ),
             ],
-          ),
+          ), // retornando o nome do produto que foi escolhido lá no mimicatcafe.dart
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -49,21 +49,36 @@ class ProductTitle extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 6.0),
+                    padding: const EdgeInsets.only(
+                      top: 0,
+                      left: 6,
+                      right: 6,
+                      bottom: 12,
+                    ),
                     child: Icon(
                       Icons.delivery_dining,
                       color: const Color.fromARGB(255, 74, 50, 39),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 6.0),
+                    padding: const EdgeInsets.only(
+                      top: 0,
+                      left: 6,
+                      right: 6,
+                      bottom: 12,
+                    ),
                     child: HugeIcon(
                       icon: HugeIcons.strokeRoundedCoffeeBeans,
                       color: const Color.fromARGB(255, 74, 50, 39),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 6.0),
+                    padding: const EdgeInsets.only(
+                      top: 0,
+                      left: 6,
+                      right: 6,
+                      bottom: 12,
+                    ),
                     child: Icon(
                       Icons.shopping_bag,
                       color: const Color.fromARGB(255, 74, 50, 39),
@@ -72,27 +87,35 @@ class ProductTitle extends StatelessWidget {
                 ],
               ),
             ],
-          ),
+          ), // aqui, temos categoria e ícones referentes ao produto
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Icon(Icons.star, color: const Color.fromARGB(255, 221, 175, 180)),
-              Row(
-                children: [
-                  Text(
-                    rating.toString(),
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 74, 50, 39),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 6),
+                child: Row(
+                  children: [
+                    Text(
+                      rating.toString(),
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 74, 50, 39),
+                      ),
                     ),
-                  ),
-                  Text(
-                    '(${reviewNumber.toStringAsFixed(0)})',
-                    style: TextStyle(fontSize: 14,
-                  color: Color.fromARGB(255, 74, 50, 39)),
-                  ),
-                ],
+                    Padding(
+                      padding: const EdgeInsets.only(left: 6.0),
+                      child: Text(
+                        '(${reviews.toStringAsFixed(0)})',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Color.fromARGB(255, 74, 50, 39),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

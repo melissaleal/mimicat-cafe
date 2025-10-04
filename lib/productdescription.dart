@@ -18,8 +18,8 @@ class ProductDescription extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 3),
                 child: Text(
-                  "Descrição",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  "Description",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 74, 50, 39)),
                 ),
               ),
             ],
@@ -38,19 +38,7 @@ class ProductDescription extends StatelessWidget {
                 ),
               ),
             ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 3.0),
-                child: Text(
-                  "Price",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ],
-          ),
+          )
         ],
       ),
     );

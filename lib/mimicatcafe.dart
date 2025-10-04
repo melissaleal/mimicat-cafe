@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '/productdetails.dart';
+import '/data/data.dart';
 
 class CatCafeApp extends StatelessWidget {
   const CatCafeApp({super.key});
@@ -9,7 +10,7 @@ class CatCafeApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Product",
-      home: ProductDetails()
+      home: ProductDetails(product: product[0]),
     );
   }
 }
